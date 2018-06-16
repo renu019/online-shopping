@@ -12,9 +12,29 @@ public class PageController {
 public ModelAndView index()
 {
 	ModelAndView mv=new ModelAndView("page");
-	mv.addObject("greeting", "welcome to spring mvc");
+	mv.addObject("userClickHome", true);
+	mv.addObject("title", "Home");
 	return mv;	
 }
+@RequestMapping(value="/about")
+public ModelAndView about()
+{
+	ModelAndView mv=new ModelAndView("page");
+	mv.addObject("userClickAbout", true);
+	mv.addObject("title", "About us");
+	return mv;	
+}
+
+@RequestMapping(value="/contact")
+public ModelAndView contact()
+{
+	ModelAndView mv=new ModelAndView("page");
+	mv.addObject("userClickContact", true);
+	mv.addObject("title", "Contact Us");
+	return mv;	
+}
+
+
 
 /*@RequestMapping(value="/test")
 public ModelAndView test(@RequestParam(value="greeting", required=false)String greeting)
@@ -27,7 +47,7 @@ public ModelAndView test(@RequestParam(value="greeting", required=false)String g
 	mv.addObject("greeting", greeting);
 	return mv;	
 }*/
-@RequestMapping(value="/test/{greeting}")
+/*@RequestMapping(value="/test/{greeting}")
 public ModelAndView test(@PathVariable("greeting")String greeting)
 {
 	if(greeting==null)
@@ -37,5 +57,5 @@ public ModelAndView test(@PathVariable("greeting")String greeting)
 	ModelAndView mv=new ModelAndView("page");
 	mv.addObject("greeting", greeting);
 	return mv;	
-}
+}*/
 }
