@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
     <%@taglib  uri="http://www.springframework.org/tags" prefix="spring"%>
- 
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" /> 
 <spring:url var="css" value="/resources/css"/>
 <spring:url var="js" value="/resources/js"/>
 <spring:url var="images" value="/resources/images"/>
@@ -54,6 +54,12 @@
     <c:if test="${userClickConatct==true}">
     <%@include file="contact.jsp" %>
     </c:if>
+    
+    <!--loading ListProducts and category  --> 
+    <c:if test="${userClickAllProducts==true ||userClickCategoryProducts==true}">
+    <%@include file="listProducts.jsp" %>
+    </c:if>
+    
   </div>
 
    <!-- footer comes here -->
