@@ -1,16 +1,44 @@
 package net.kzn.shoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Category {
 /*
  * private field
  * */
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
 	private String name;
+	
 	private String description;
+	
+	@Column(name="image_url")	
 	private String imageUrl;
-	private boolean active=true;
+	
+	@Column(name="is_active")
+	boolean active=true;
+	
+	
+	//toString method
+	
+	
+	//getter setter method
 	public int getId() {
 		return id;
+	}
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
+				+ ", active=" + active + "]";
 	}
 	public void setId(int id) {
 		this.id = id;

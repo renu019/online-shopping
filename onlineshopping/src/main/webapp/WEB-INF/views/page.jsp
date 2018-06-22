@@ -20,14 +20,21 @@
     <title>Online Shopping -${title} </title>
     <script>
     window.menu='${title}'
+    	 window.contextRoot='${contextRoot}'
     </script>
 
     <!-- Bootstrap Core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Readable Theme -->
+     <link href="${css}/bootstrap.readable-theme.css" rel="stylesheet">
+    
+    <!-- BootStrap datatable theme -->
+     <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="${css}/myapp.css" rel="stylesheet">
      <%-- <link href="${css}/bootstrap-cyborg.css" rel="stylesheet">    --%>
+
 
 </head>
 
@@ -60,6 +67,12 @@
     <%@include file="listProducts.jsp" %>
     </c:if>
     
+     <!--loading Single product  --> 
+    <c:if test="${userClickShowProduct==true}">
+    <%@include file="singleProduct.jsp" %>
+    </c:if>
+    
+    
   </div>
 
    <!-- footer comes here -->
@@ -68,9 +81,15 @@
 
     <!-- jQuery -->
     <script src="${js}/jquery.js"></script>
+    
+    <!-- jQuery Table -->
+    <script src="${js}/jquery.dataTables.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${js}/bootstrap.min.js"></script>
+    
+    <!-- Bootstrap dataTables JavaScript -->
+    <script src="${js}/dataTables.bootstrap.js"></script>
 
 <!-- Self Loaded JavaScript -->
     <script src="${js}/myapp.js"></script>
